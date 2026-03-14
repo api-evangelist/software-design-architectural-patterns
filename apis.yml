@@ -1,0 +1,16 @@
+name: Software Design Architectural Patterns
+description: Reusable solutions and best practices for organizing software system
+  architecture, including patterns like MVC, Microservices, Layered Architecture,
+  Event-Driven, and CQRS that provide proven approaches to common design problems.
+  It is used across a range of industries and technical contexts to improve efficiency
+  and outcomes.
+url: https://en.wikipedia.org/wiki/Architectural_pattern
+tags:
+- Software Architecture
+- Design Patterns
+- System Design
+- Best Practices
+created: '2025'
+modified: '2025'
+apis: []
+common: []
