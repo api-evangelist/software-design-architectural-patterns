@@ -1,0 +1,34 @@
+{
+  "title": "Software Design Architectural Patterns - Pattern Structure",
+  "description": "JSON Structure for documenting software architectural patterns",
+  "version": "1.0",
+  "source": "https://learn.microsoft.com/en-us/azure/architecture/patterns/",
+  "structures": [
+    {
+      "name": "ArchitecturalPattern",
+      "description": "A documented software architectural pattern with context, structure, and tradeoffs",
+      "fields": [
+        {"name": "id", "type": "string", "required": false, "description": "Unique pattern identifier"},
+        {"name": "name", "type": "string", "required": true, "description": "Pattern name"},
+        {"name": "category", "type": "enum", "required": true, "description": "Pattern category (MVC, Microservices, CQRS, etc.)"},
+        {"name": "description", "type": "string", "required": true, "description": "Pattern description"},
+        {"name": "aliases", "type": "array<string>", "required": false, "description": "Alternative names"},
+        {"name": "components", "type": "array<Component>", "required": false, "description": "Architectural components"},
+        {"name": "useCases", "type": "array<string>", "required": false, "description": "Applicable scenarios"},
+        {"name": "benefits", "type": "array<string>", "required": false, "description": "Pattern advantages"},
+        {"name": "tradeoffs", "type": "array<string>", "required": false, "description": "Pattern disadvantages"},
+        {"name": "relatedPatterns", "type": "array<string>", "required": false, "description": "Related patterns"},
+        {"name": "references", "type": "array<Reference>", "required": false, "description": "Documentation links"}
+      ]
+    },
+    {
+      "name": "Component",
+      "description": "An architectural component that plays a role in the pattern",
+      "fields": [
+        {"name": "name", "type": "string", "required": true, "description": "Component name"},
+        {"name": "description", "type": "string", "required": false, "description": "Component description"},
+        {"name": "responsibilities", "type": "array<string>", "required": false, "description": "Component responsibilities"}
+      ]
+    }
+  ]
+}

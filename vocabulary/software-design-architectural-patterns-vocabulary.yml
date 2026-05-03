@@ -1,0 +1,114 @@
+vocabulary:
+  name: Software Design Architectural Patterns Vocabulary
+  description: >-
+    Core vocabulary and taxonomy for software architectural patterns, covering
+    the major architectural styles, their components, and associated concepts
+    used in modern software system design.
+  version: '1.0'
+  created: '2026-05-02'
+  modified: '2026-05-02'
+
+domains:
+  - name: Architectural Styles
+    description: Major categories of software architectural patterns
+    terms:
+      - term: Layered Architecture
+        definition: >-
+          An architecture that organizes code into horizontal layers (Presentation,
+          Business Logic, Data Access), where each layer only interacts with
+          adjacent layers. Also known as N-tier architecture.
+      - term: Microservices Architecture
+        definition: >-
+          An architecture that structures an application as a collection of
+          small, independently deployable services organized around business
+          capabilities, each owning its data store.
+      - term: Event-Driven Architecture
+        definition: >-
+          An architectural style where components communicate through events,
+          enabling loose coupling and asynchronous processing. Includes
+          Event Notification and Event Sourcing variants.
+      - term: MVC (Model-View-Controller)
+        definition: >-
+          A pattern that separates application concerns into three components:
+          Model (data and business logic), View (user interface), and Controller
+          (handles user input and orchestrates model and view).
+      - term: CQRS
+        definition: >-
+          Command Query Responsibility Segregation: separates read (query) and
+          write (command) operations into distinct models optimized independently.
+      - term: Hexagonal Architecture
+        definition: >-
+          Also called Ports and Adapters, this pattern isolates the application
+          core from external systems through defined ports and adapters,
+          enabling independent testability and deployability.
+      - term: Serverless Architecture
+        definition: >-
+          An architecture where application logic runs in stateless functions
+          managed by a cloud provider, with automatic scaling and pay-per-execution
+          pricing eliminating server management.
+      - term: Service-Oriented Architecture
+        definition: >-
+          An architecture style where software components are provided as services
+          with defined interfaces, enabling enterprise application integration
+          and reuse across organizational boundaries.
+
+  - name: Decomposition Patterns
+    description: Patterns for breaking down complex systems
+    terms:
+      - term: Strangler Fig Pattern
+        definition: >-
+          A migration strategy where new functionality is built around the legacy
+          system, gradually replacing it until the old system can be removed,
+          like a strangler fig tree growing around its host.
+      - term: Domain-Driven Design
+        definition: >-
+          An approach to software development that centers the design on the
+          business domain model, using Bounded Contexts, Aggregates, and
+          Entities as core modeling concepts.
+      - term: Bounded Context
+        definition: >-
+          A DDD concept defining the boundary within which a domain model
+          applies, enabling different parts of a system to have different
+          models for the same real-world concept.
+
+  - name: Integration Patterns
+    description: Patterns for connecting distributed system components
+    terms:
+      - term: API Gateway
+        definition: >-
+          A single entry point for client requests to a microservices backend,
+          handling routing, authentication, rate limiting, and request
+          aggregation across multiple downstream services.
+      - term: Saga Pattern
+        definition: >-
+          A pattern for managing distributed transactions across microservices
+          using a sequence of local transactions coordinated by events or
+          orchestration, without two-phase commit.
+      - term: Circuit Breaker
+        definition: >-
+          A resilience pattern that prevents cascading failures by detecting
+          service failures and short-circuiting calls to failing services
+          until they recover, returning fallback responses.
+      - term: Event Sourcing
+        definition: >-
+          A pattern that stores the state of a system as a sequence of events
+          rather than current state snapshots, enabling complete audit trails
+          and temporal query capabilities.
+
+  - name: Data Patterns
+    description: Patterns for data management in distributed systems
+    terms:
+      - term: Database per Service
+        definition: >-
+          A microservices data pattern where each service owns its own database,
+          ensuring loose coupling and enabling each service to use the most
+          appropriate database technology.
+      - term: Shared Database
+        definition: >-
+          An integration pattern where multiple services share a single database
+          schema, trading simplicity for tight coupling (generally discouraged
+          in microservices).
+      - term: Event Store
+        definition: >-
+          An append-only database for storing domain events in an event-sourced
+          system, providing the complete history of state changes.

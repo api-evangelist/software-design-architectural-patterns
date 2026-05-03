@@ -1,0 +1,63 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "arch": "https://api-evangelist.github.io/software-design-architectural-patterns/ns#",
+    "pat": "https://microservices.io/patterns/ns#",
+    "ArchitecturalPattern": {
+      "@id": "schema:HowTo",
+      "@type": "@id"
+    },
+    "name": {
+      "@id": "schema:name"
+    },
+    "description": {
+      "@id": "schema:description"
+    },
+    "category": {
+      "@id": "schema:category"
+    },
+    "aliases": {
+      "@id": "schema:alternateName"
+    },
+    "components": {
+      "@id": "arch:hasComponent"
+    },
+    "Component": {
+      "@id": "arch:Component",
+      "@type": "@id"
+    },
+    "useCases": {
+      "@id": "schema:applicationCategory"
+    },
+    "benefits": {
+      "@id": "arch:benefit"
+    },
+    "tradeoffs": {
+      "@id": "arch:tradeoff"
+    },
+    "relatedPatterns": {
+      "@id": "schema:isRelatedTo"
+    },
+    "MVC": {
+      "@id": "arch:MVCPattern"
+    },
+    "Microservices": {
+      "@id": "arch:MicroservicesPattern"
+    },
+    "CQRS": {
+      "@id": "arch:CQRSPattern"
+    },
+    "EventDriven": {
+      "@id": "arch:EventDrivenPattern"
+    },
+    "Hexagonal": {
+      "@id": "arch:HexagonalPattern"
+    },
+    "Serverless": {
+      "@id": "arch:ServerlessPattern"
+    },
+    "LayeredArchitecture": {
+      "@id": "arch:LayeredPattern"
+    }
+  }
+}

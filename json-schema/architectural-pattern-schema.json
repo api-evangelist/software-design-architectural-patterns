@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/software-design-architectural-patterns/json-schema/architectural-pattern-schema.json",
+  "title": "Software Architectural Pattern",
+  "description": "JSON Schema for documenting a software architectural pattern, its use cases, components, and tradeoffs",
+  "type": "object",
+  "required": ["name", "category", "description"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the pattern"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the architectural pattern"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Layered",
+        "Microservices",
+        "Event-Driven",
+        "Service-Oriented",
+        "CQRS",
+        "Hexagonal",
+        "Serverless",
+        "MVC",
+        "Pipe-and-Filter",
+        "Space-Based",
+        "Peer-to-Peer"
+      ],
+      "description": "High-level category of the architectural pattern"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of what the pattern is and how it works"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Alternative names for this pattern"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Component"
+      },
+      "description": "Key architectural components of this pattern"
+    },
+    "useCases": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Common use cases and scenarios where this pattern applies"
+    },
+    "benefits": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Advantages of using this pattern"
+    },
+    "tradeoffs": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Disadvantages or challenges of this pattern"
+    },
+    "relatedPatterns": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Names of related or complementary patterns"
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Reference"
+      },
+      "description": "Authoritative references and documentation"
+    }
+  },
+  "definitions": {
+    "Component": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Component name"
+        },
+        "description": {
+          "type": "string",
+          "description": "Role of this component in the pattern"
+        },
+        "responsibilities": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Key responsibilities of this component"
+        }
+      }
+    },
+    "Reference": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title of the reference"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the reference"
+        },
+        "author": {
+          "type": "string",
+          "description": "Author of the reference"
+        }
+      }
+    }
+  }
+}

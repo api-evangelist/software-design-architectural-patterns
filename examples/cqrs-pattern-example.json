@@ -1,0 +1,82 @@
+{
+  "title": "CQRS Architectural Pattern - Example Documentation",
+  "description": "Example of documenting the CQRS (Command Query Responsibility Segregation) architectural pattern",
+  "data": {
+    "id": "cqrs",
+    "name": "CQRS (Command Query Responsibility Segregation)",
+    "category": "CQRS",
+    "description": "CQRS separates read (query) and write (command) operations into distinct models. The command side handles state-changing operations, while the query side is optimized for reads. This allows each side to scale, optimize, and evolve independently.",
+    "aliases": ["Command Query Responsibility Segregation"],
+    "components": [
+      {
+        "name": "Command Model",
+        "description": "Handles state-changing write operations",
+        "responsibilities": [
+          "Process commands that change system state",
+          "Validate business rules",
+          "Emit domain events",
+          "Update the write data store"
+        ]
+      },
+      {
+        "name": "Query Model",
+        "description": "Handles read operations returning data",
+        "responsibilities": [
+          "Answer queries with read-optimized views",
+          "Maintain denormalized read projections",
+          "Subscribe to domain events to keep views current"
+        ]
+      },
+      {
+        "name": "Command Bus",
+        "description": "Routes commands to appropriate command handlers",
+        "responsibilities": [
+          "Dispatch commands to handlers",
+          "Provide middleware for validation and logging"
+        ]
+      },
+      {
+        "name": "Event Store",
+        "description": "Persists domain events for event sourcing integration",
+        "responsibilities": [
+          "Append-only storage of domain events",
+          "Event replay for rebuilding state"
+        ]
+      }
+    ],
+    "useCases": [
+      "High-traffic applications where reads vastly outnumber writes",
+      "Complex domain models where read and write concerns differ significantly",
+      "Event-sourced systems requiring full audit trails",
+      "Collaborative domains with complex concurrency requirements",
+      "Microservices needing independent scaling of read and write sides"
+    ],
+    "benefits": [
+      "Independent scaling of read and write workloads",
+      "Optimized read models for complex queries",
+      "Improved security through separation of concern",
+      "Enables event sourcing and full audit history",
+      "Reduces contention on shared data models"
+    ],
+    "tradeoffs": [
+      "Increased system complexity",
+      "Eventual consistency between command and query sides",
+      "Requires messaging infrastructure for event distribution",
+      "More code to maintain (two models instead of one)",
+      "Debugging becomes harder across the command/query boundary"
+    ],
+    "relatedPatterns": ["Event Sourcing", "Domain-Driven Design", "Saga", "Microservices"],
+    "references": [
+      {
+        "title": "CQRS Pattern - Azure Architecture Center",
+        "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs",
+        "author": "Microsoft"
+      },
+      {
+        "title": "CQRS Pattern - microservices.io",
+        "url": "https://microservices.io/patterns/data/cqrs.html",
+        "author": "Chris Richardson"
+      }
+    ]
+  }
+}
