@@ -67,6 +67,10 @@ apis:
         url: https://microservices.io/
 
 common:
+  - type: VulnerabilityDisclosure
+    url: security/software-design-architectural-patterns-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/software-design-architectural-patterns-domain-security.yml
   - type: Reference
     url: https://en.wikipedia.org/wiki/Architectural_pattern
   - type: Reference
