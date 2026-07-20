@@ -1,5 +1,6 @@
 aid: software-design-architectural-patterns
 name: Software Design Architectural Patterns
+kind: topic
 description: >-
   Software architectural patterns are reusable solutions and best practices for
   organizing software system architecture. Key patterns include MVC (Model-View-Controller),
